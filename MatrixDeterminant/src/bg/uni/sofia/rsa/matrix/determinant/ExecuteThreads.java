@@ -35,6 +35,7 @@ public class ExecuteThreads {
 		//Execute all Callables
 		List<Future<Double>> results = executor.invokeAll(tasks, 10,
 				TimeUnit.SECONDS);
+		
 		Double sum = 0.0;
 		//Collect all results 
 		for (Future<Double> f : results) {

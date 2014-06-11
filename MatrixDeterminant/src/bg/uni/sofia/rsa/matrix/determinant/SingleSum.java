@@ -13,13 +13,16 @@ public class SingleSum implements Callable<Double> {
 	}
 
 	/**
-	 * Calculate the determinant of given matrix 
+	 * Calculate the determinant of given matrix
+	 * 
 	 * @param matrix
 	 * @param order
 	 * @return Double determinant
 	 */
-	public static <T> double determinentSingle(SparseMatrix<Float> matrix, int order) {
-		SparseMatrix<Float> matrix_buf = new SparseMatrix<Float>(order, order, 0.0F);
+	public static <T> double determinentSingle(SparseMatrix<Float> matrix,
+			int order) {
+		SparseMatrix<Float> matrix_buf = new SparseMatrix<Float>(order, order,
+				0.0F);
 
 		int i, j, k;
 		double sum = 0;
@@ -44,7 +47,7 @@ public class SingleSum implements Callable<Double> {
 						}
 					}
 				}
-				
+
 				sum = sum + matrix.getValueAt(0, p) * Math.pow((-1), p)
 						* determinentSingle(matrix_buf, order - 1);
 			}
@@ -54,8 +57,6 @@ public class SingleSum implements Callable<Double> {
 
 	@Override
 	public Double call() throws Exception {
-		// determinentSingle(matrix, n);
-		// Result res = determinentSingle(matrix, n);
 		return determinentSingle(matrix, n);
 	}
 }

@@ -9,7 +9,7 @@ public class SparseMatrix<T> {
 	private int n;
 	private Map<Integer, T> data = new TreeMap<Integer, T>();
 
-	// / create a new matrix with m rows and n columns
+	// create a new matrix with m rows and n columns
 	public SparseMatrix(int m, int n, T defaultValue) {
 		this.m = m;
 		this.n = n;

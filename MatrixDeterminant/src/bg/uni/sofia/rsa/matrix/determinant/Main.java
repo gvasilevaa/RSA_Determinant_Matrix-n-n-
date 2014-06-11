@@ -13,6 +13,14 @@ public class Main {
 		testMatrix(n);
 	}
 
+	/**
+	 * 
+	 * @param n
+	 * @throws NumberFormatException
+	 * @throws IOException
+	 * @throws InterruptedException
+	 * @throws ExecutionException
+	 */
 	public static void testMatrix(int n) throws NumberFormatException,
 			IOException, InterruptedException, ExecutionException {
 		//Create SparseMatrix (n,n)
@@ -46,8 +54,8 @@ public class Main {
 	/**
 	 * Recursive function for checking the real determinant 
 	 * @param matrix
-	 * @param m
-	 * @return
+	 * @param m :  matrix order
+	 * @return Double 
 	 */
 	public static <T> double determinent(SparseMatrix<Float> matrix, int m) {
 		SparseMatrix<Float> matrix_buf = new SparseMatrix<Float>(m, m, 0.0F);
